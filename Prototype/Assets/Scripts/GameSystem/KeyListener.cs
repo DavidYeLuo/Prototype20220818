@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace DefaultNamespace
+namespace GameSystem
 {
     public class KeyListener : MonoBehaviour
     {

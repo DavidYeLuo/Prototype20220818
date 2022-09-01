@@ -5,9 +5,9 @@ using UnityEngine;
 namespace Player
 {
     /**
- * Prototype code: Note this is a monolithic class.
- * Purpose of this class is for showcase proposed ideas.
- */
+     * Prototype code: Note this is a monolithic class.
+     * Purpose of this class is for showcase proposed ideas.
+     */
     public class Player : MonoBehaviour
     {
         [SerializeField] private float speed;

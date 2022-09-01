@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace GameSystem
 {
     public class RayCaster : MonoBehaviour
     {

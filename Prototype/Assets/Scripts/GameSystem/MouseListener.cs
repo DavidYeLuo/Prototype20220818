@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace DefaultNamespace
+namespace GameSystem
 {
     public class MouseListener : MonoBehaviour
     {
