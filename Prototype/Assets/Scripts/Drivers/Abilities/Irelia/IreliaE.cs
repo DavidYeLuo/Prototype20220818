@@ -11,12 +11,11 @@ namespace Player.Abilities
         [Header("Config")]
         [SerializeField] private float groundOffset;
         
-        [Header("Pillar")]
-        [SerializeField] private GameObject ePillar;
-        
         [Space]
         [Header("Dependencies")]
         [SerializeField] private GameObject cursorInterface;
+        [Header("Pillar")]
+        [SerializeField] private GameObject ePillar;
         
         [Space]
         [Header("Debug")]

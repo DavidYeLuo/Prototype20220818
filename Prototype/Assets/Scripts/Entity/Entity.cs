@@ -9,7 +9,7 @@ namespace Player
      * Prototype code: Note this is a monolithic class.
      * Purpose of this class is for showcase proposed ideas.
      */
-    public class Player : MonoBehaviour, IAbilityUser, IMove, ICursorPosition
+    public class Entity : MonoBehaviour, IAbilityUser, IMove, ICursorPosition
     {
         [Header("Drivers")] 
         [SerializeField] private CursorPos cursor;

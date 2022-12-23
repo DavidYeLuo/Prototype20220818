@@ -9,11 +9,11 @@ namespace Player.Abilities
     public class IreliaW : Ability
     {
         [Header("Config")]
-        [SerializeField] private GameObject currentEntity;
         [SerializeField] private float groundOffset;
 
-        [Space] [Header("Dependencies")] [SerializeField]
-        private GameObject cursorInterface;
+        [Space] [Header("Dependencies")] 
+        [SerializeField] private GameObject startHitbox;
+        [SerializeField] private GameObject cursorInterface;
         
         [Space]
         private LineRenderer lineRenderer;
@@ -28,7 +28,7 @@ namespace Player.Abilities
 
         public override void PerformAbility()
         {
-            lineRenderer.SetPosition(0, currentEntity.transform.position);
+            lineRenderer.SetPosition(0, startHitbox.transform.position);
             var offset = cursor.GetCursorPosition() + Vector3.up * groundOffset;
             lineRenderer.SetPosition(1, offset);
         }
