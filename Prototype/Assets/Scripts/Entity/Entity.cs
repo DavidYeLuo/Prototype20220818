@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Entity;
 using Player.Abilities;
 using UnityEngine;
 
@@ -8,12 +9,13 @@ namespace Player
      * Prototype code: Note this is a monolithic class.
      * Purpose of this class is for showcase proposed ideas.
      */
-    public class Player : MonoBehaviour
+    public class Entity : MonoBehaviour, IAbilityUser, IMove, ICursorPosition
     {
-        [Header("Drivers")]
+        [Header("Drivers")] 
+        [SerializeField] private CursorPos cursor;
         [SerializeField] private Movement movement;
         [SerializeField] private List<Ability> abilityList;
-
+        
         void Start()
         {
             foreach (var ability in abilityList)
@@ -41,6 +43,16 @@ namespace Player
         public void UseAbility(int n)
         {
             abilityList[n].PerformAbility();
-        } 
+        }
+
+        public Vector3 GetCursorPosition()
+        {
+            return cursor.GetPosition();
+        }
+
+        public void SetCursorPosition(Vector3 position)
+        {
+            cursor.SetPosition(position);
+        }
     }
 }

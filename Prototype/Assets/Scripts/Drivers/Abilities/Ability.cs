@@ -1,14 +1,15 @@
+using Entity;
 using UnityEngine;
 
 namespace Player.Abilities
 {
     public abstract class Ability : MonoBehaviour
     {
-        protected Player player;
+        protected IAbilityUser AbilityUser;
 
-        public void Init(Player player)
+        public void Init(IAbilityUser abilityUser)
         {
-            this.player = player;
+            this.AbilityUser = abilityUser;
         }
         public abstract void PerformAbility();
     }
