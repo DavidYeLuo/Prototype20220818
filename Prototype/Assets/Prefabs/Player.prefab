@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7522ba350542461488879a1929d049f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rayCaster: {fileID: 0}
+  modifiedSpeed: 35
 --- !u!1 &924697856
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +176,56 @@ MonoBehaviour:
   eCount: 0
   startE: {x: 0, y: 0, z: 0}
   endE: {x: 0, y: 0, z: 0}
+--- !u!1 &3006028867136699234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8845619112100369649}
+  - component: {fileID: 5433464710066812629}
+  m_Layer: 0
+  m_Name: Movement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8845619112100369649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006028867136699234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7622237613109306687}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5433464710066812629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006028867136699234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6978f1344d4542bd96f079aa3ba431ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToMove: {fileID: 7622237613109306687}
+  speed: 2
+  groundOffset: {x: 0, y: 1, z: 0}
+  isMoving: 0
+  moveToward: {x: 0, y: 0, z: 0}
+  destination: {x: 0, y: 0, z: 0}
 --- !u!1 &4984033713781933809
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +260,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 656802939}
+  - {fileID: 8845619112100369649}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -303,10 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a026f12ab08b885cfa6300176ba8bbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  groundOffset: 1
-  moveToward: {x: 0, y: 0, z: 0}
-  destination: {x: 0, y: 0, z: 0}
+  movement: {fileID: 5433464710066812629}
   abilityList:
   - {fileID: 808980613}
   - {fileID: 689630879}

@@ -10,15 +10,8 @@ namespace Player
      */
     public class Player : MonoBehaviour
     {
-        [SerializeField] private float speed;
-        [SerializeField] private float groundOffset;
-
-        // [SerializeField] private GameObject ePillar;
-
-        [Header("Debug Movement")] 
-        [SerializeField] private Vector3 moveToward;
-        [SerializeField] private Vector3 destination;
-
+        [Header("Drivers")]
+        [SerializeField] private Movement movement;
         [SerializeField] private List<Ability> abilityList;
 
         void Start()
@@ -29,29 +22,25 @@ namespace Player
             }
         }
 
+        /**
+         * Moves the character at base speed
+         */
         public void Move(Vector3 position)
         {
-            destination = position;
+            movement.Move(position);
         }
-
-        public float Speed
+        
+        /**
+         * Moves the character at a set speed
+         */
+        public void Move(Vector3 position, float speed)
         {
-            get => speed;
-            set => speed = value;
+            movement.Move(position, speed);
         }
 
         public void UseAbility(int n)
         {
             abilityList[n].PerformAbility();
         } 
-        
-
-        // Update is called once per frame
-        void FixedUpdate()
-        {
-            Vector3 offset = Vector3.up * groundOffset;
-            moveToward = Vector3.MoveTowards(transform.position, destination + offset, speed * Time.deltaTime);
-            transform.position = moveToward;
-        }
     }
 }
