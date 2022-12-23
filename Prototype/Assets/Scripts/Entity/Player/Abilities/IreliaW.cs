@@ -6,6 +6,7 @@ namespace Player.Abilities
 {
     public class IreliaW : Ability
     {
+        [SerializeField] private Player player;
         [SerializeField] private float groundOffset;
         
         [Space]

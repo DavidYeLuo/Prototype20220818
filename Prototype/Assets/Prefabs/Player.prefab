@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07685c7a522943b588e9e3b47f885f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4258743191158410604}
   groundOffset: 1
   rayCaster: {fileID: 0}
 --- !u!1 &808980612
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7522ba350542461488879a1929d049f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4258743191158410604}
   rayCaster: {fileID: 0}
   modifiedSpeed: 35
 --- !u!1 &924697856

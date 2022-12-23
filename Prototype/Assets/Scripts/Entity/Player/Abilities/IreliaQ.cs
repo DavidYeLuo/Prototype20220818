@@ -5,6 +5,7 @@ namespace Player.Abilities
 {
     public class IreliaQ : Ability
     {
+        [SerializeField] private Player player;
         [SerializeField] private RayCaster rayCaster;
 
         [Header("Properties")]
