@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &57562343 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4258743191158410604, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
-  m_PrefabInstance: {fileID: 1477329295694680814}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a026f12ab08b885cfa6300176ba8bbf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &95020028
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecf418a974d4984a6a50e7708e7270f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 57562343}
+  player: {fileID: 785073709}
   rayCaster: {fileID: 780813987}
 --- !u!4 &463484993
 Transform:
@@ -516,6 +505,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &785073709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4984033713781933809, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
+  m_PrefabInstance: {fileID: 1477329295694680814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
