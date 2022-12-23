@@ -43,17 +43,17 @@ namespace Player
          */
         public void UsePlayerAbility(int n)
         {
-            cursorPositionDriver.SetCursorPosition(GetCursorPosition());
+            GetCursorPosition();
+            cursorPositionDriver.SetCursorPosition(cursorPosition);
             abilityUserDriver.UseAbility(n-1);
         }
 
-        public Vector3 GetCursorPosition()
+        public void GetCursorPosition()
         {
             if (rayCaster.MouseOverObject(out var hit))
             {
                 cursorPosition = hit.point;
             }
-            return cursorPosition;
         }
     }
 }
