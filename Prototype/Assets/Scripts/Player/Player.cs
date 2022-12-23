@@ -10,28 +10,40 @@ namespace Player
      */
     public class Player : MonoBehaviour
     {
-        [SerializeField] private float speed;
-        [SerializeField] private float groundOffset;
-
-        // [SerializeField] private GameObject ePillar;
-
-        [Header("Debug Movement")] 
-        [SerializeField] private Vector3 moveToward;
-        [SerializeField] private Vector3 destination;
+        [SerializeField] private float speed; // Base Speed
+        [SerializeField] private Vector3 groundOffset;
+        
+        [Header("Debug Movement")]
+        private Movement movementDriver;
+        private Coroutine movementCoroutine;
 
         [SerializeField] private List<Ability> abilityList;
 
         void Start()
         {
+            movementDriver = new Movement(this.gameObject, Time.deltaTime, groundOffset);
             foreach (var ability in abilityList)
             {
                 ability.Init(this);
             }
         }
 
+        /**
+         * Moves the character at base speed
+         */
         public void Move(Vector3 position)
         {
-            destination = position;
+            if (movementCoroutine != null) StopCoroutine(movementCoroutine);
+            movementCoroutine = StartCoroutine(movementDriver.Move_Coroutine(position, speed));
+        }
+        
+        /**
+         * Moves the character at a set speed
+         */
+        public void Move(Vector3 position, float speed)
+        {
+            if (movementCoroutine != null) StopCoroutine(movementCoroutine);
+            movementCoroutine = StartCoroutine(movementDriver.Move_Coroutine(position, speed));
         }
 
         public float Speed
@@ -44,14 +56,5 @@ namespace Player
         {
             abilityList[n].PerformAbility();
         } 
-        
-
-        // Update is called once per frame
-        void FixedUpdate()
-        {
-            Vector3 offset = Vector3.up * groundOffset;
-            moveToward = Vector3.MoveTowards(transform.position, destination + offset, speed * Time.deltaTime);
-            transform.position = moveToward;
-        }
     }
 }
