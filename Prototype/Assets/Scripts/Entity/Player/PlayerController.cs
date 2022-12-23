@@ -1,6 +1,7 @@
 using System;
 using Entity;
 using GameSystem;
+using UnityEditor;
 using UnityEngine;
 
 namespace Player
@@ -12,24 +13,29 @@ namespace Player
 
         private IAbilityUser abilityUserDriver;
         private IMove movementDriver;
+        private ICursorPosition cursorPositionDriver;
+
+        private Vector3 cursorPosition;
 
         public void Start()
         {
             abilityUserDriver = player.GetComponent<IAbilityUser>();
             movementDriver = player.GetComponent<IMove>();
+            cursorPositionDriver = player.GetComponent<ICursorPosition>();
             
             if(abilityUserDriver == null)
                 Debug.Log("Warning abilityUserDriver is NULL");
             if(movementDriver == null)
                 Debug.Log("Warning movementDriver is NULL");
+            
+            cursorPosition = player.transform.forward;
         }
 
         public void MovePlayerTowardMousePosition()
         {
-            if (rayCaster.MouseOverObject(out var hit))
-            {
-                movementDriver.Move(hit.point);
-            }
+            GetCursorPosition();
+            cursorPositionDriver.SetCursorPosition(cursorPosition);
+            movementDriver.Move(cursorPosition);
         }
 
         /**
@@ -37,7 +43,17 @@ namespace Player
          */
         public void UsePlayerAbility(int n)
         {
+            cursorPositionDriver.SetCursorPosition(GetCursorPosition());
             abilityUserDriver.UseAbility(n-1);
+        }
+
+        public Vector3 GetCursorPosition()
+        {
+            if (rayCaster.MouseOverObject(out var hit))
+            {
+                cursorPosition = hit.point;
+            }
+            return cursorPosition;
         }
     }
 }

@@ -927,18 +927,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 689630879, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
-      propertyPath: rayCaster
-      value: 
-      objectReference: {fileID: 780813987}
-    - target: {fileID: 808980613, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
-      propertyPath: rayCaster
-      value: 
-      objectReference: {fileID: 780813987}
-    - target: {fileID: 924697857, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
-      propertyPath: rayCaster
-      value: 
-      objectReference: {fileID: 780813987}
     - target: {fileID: 4984033713781933809, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
       propertyPath: m_Name
       value: Player
