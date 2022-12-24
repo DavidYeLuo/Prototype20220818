@@ -1,4 +1,5 @@
 using System;
+using Drivers.Health;
 using Entity;
 using GameSystem;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Player.Abilities
         [Header("Dependencies")]
         [SerializeField] private GameObject movementInterface;
         [SerializeField] private GameObject cursorInterface;
+        [SerializeField] private GameObject hitbox;
 
         private IMove movement;
         private ICursorPosition cursor;
@@ -26,10 +28,13 @@ namespace Player.Abilities
 
             if (movement == null) Debug.Log("Warning movement is null.");
             if (cursor == null) Debug.Log("Warning cursor is null.");
+            
+            hitbox.SetActive(false);
         }
 
         public override void PerformAbility()
         {
+            hitbox.SetActive(true);
             movement.Move(cursor.GetCursorPosition(), modifiedSpeed);
         }
     }
