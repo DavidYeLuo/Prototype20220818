@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Drivers.Health
 {
@@ -6,6 +8,19 @@ namespace Drivers.Health
     {
         [SerializeField] private int value;
         [SerializeField] private int max;
+
+        [Header("Optional")] 
+        [SerializeField] private IntReference healthValueReference;
+        [SerializeField] private IntReference maxHealthValueReference;
+
+        private void Start()
+        {
+            // Updates the reference
+            if (healthValueReference == null) return;
+            healthValueReference.Set(value);
+            if (maxHealthValueReference == null) return;
+            maxHealthValueReference.Set(value);
+        }
 
         public int GetHealth()
         {
@@ -32,6 +47,9 @@ namespace Drivers.Health
             value = amount;
             if (value < 0) value = 0;
             if (value > max) value = max;
+            
+            if (healthValueReference == null) return;
+            healthValueReference.Set(value);
         }
     }
 }

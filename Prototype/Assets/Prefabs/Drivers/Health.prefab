@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 10
   max: 10
+  healthValueReference: {fileID: 0}
+  maxHealthValueReference: {fileID: 0}

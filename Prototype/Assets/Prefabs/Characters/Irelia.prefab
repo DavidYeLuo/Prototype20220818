@@ -461,6 +461,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health
       objectReference: {fileID: 0}
+    - target: {fileID: 8067890807234408745, guid: 2573b4efaebf34562b8a43b31d88c091, type: 3}
+      propertyPath: valueReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 49c67f7a56f486dfe9b110571f54a5d2, type: 2}
+    - target: {fileID: 8067890807234408745, guid: 2573b4efaebf34562b8a43b31d88c091, type: 3}
+      propertyPath: healthValueReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 49c67f7a56f486dfe9b110571f54a5d2, type: 2}
+    - target: {fileID: 8067890807234408745, guid: 2573b4efaebf34562b8a43b31d88c091, type: 3}
+      propertyPath: maxHealthValueReference
+      value: 
+      objectReference: {fileID: 11400000, guid: ee6def055c7b12ed38a2d7c6abbfa4b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2573b4efaebf34562b8a43b31d88c091, type: 3}
 --- !u!114 &2910965701818981200 stripped
