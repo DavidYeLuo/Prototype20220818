@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Drivers.Health;
 using Entity;
 using Player.Abilities;
 using UnityEngine;
@@ -9,9 +10,10 @@ namespace Player
      * Prototype code: Note this is a monolithic class.
      * Purpose of this class is for showcase proposed ideas.
      */
-    public class Entity : MonoBehaviour, IAbilityUser, IMove, ICursorPosition
+    public class Entity : MonoBehaviour, IAbilityUser, IMove, ICursorPosition, IHealth
     {
         [Header("Drivers")] 
+        [SerializeField] private Health health;
         [SerializeField] private CursorPos cursor;
         [SerializeField] private Movement movement;
         [SerializeField] private List<Ability> abilityList;
@@ -53,6 +55,16 @@ namespace Player
         public void SetCursorPosition(Vector3 position)
         {
             cursor.SetPosition(position);
+        }
+
+        public void Heal(int amount)
+        {
+            health.IncreaseHealth(amount);
+        }
+
+        public void TakeDamage(int amount)
+        {
+            health.DecreaseHealth(amount);
         }
     }
 }

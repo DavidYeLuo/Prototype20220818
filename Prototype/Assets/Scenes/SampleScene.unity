@@ -927,10 +927,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 689630879, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
-      propertyPath: startHitbox
-      value: 
-      objectReference: {fileID: 785073709}
     - target: {fileID: 4984033713781933809, guid: f5521b4bb22137c3faf07189d548968a, type: 3}
       propertyPath: m_Name
       value: Player
