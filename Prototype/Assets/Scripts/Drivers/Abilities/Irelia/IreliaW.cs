@@ -1,4 +1,5 @@
 using System;
+using Drivers.Health;
 using Entity;
 using GameSystem;
 using UnityEngine;
@@ -9,12 +10,18 @@ namespace Player.Abilities
 {
     public class IreliaW : Ability
     {
-        [Header("Config")]
+        [Header("Config")] 
         [SerializeField] private float groundOffset;
+
+        [Header("Hitbox")]
+        [SerializeField] private GameObject hitbox;
+        [Tooltip("Changes the hitbox's orientation to face where the player clicked.")]
+        [SerializeField] private GameObject hitboxRotation;
 
         [Tooltip("Duration of the hitbox")]
         [SerializeField] private float abilityDuration;
 
+        [FormerlySerializedAs("orientationToMatch")]
         [Space] [Header("Dependencies")] 
         [SerializeField] private GameObject startHitbox;
         [SerializeField] private GameObject cursorInterface;
@@ -51,10 +58,19 @@ namespace Player.Abilities
         public override void PerformAbility()
         {
             EnableLineRenderer();
-            lineRenderer.SetPosition(0, startHitbox.transform.position);
-            var offset = cursor.GetCursorPosition() + Vector3.up * groundOffset;
-            lineRenderer.SetPosition(1, offset);
+            Vector3 startPosition = startHitbox.transform.position;
+            // Note: endPosition isn't where the user click, it is offset by groundOffset
+            Vector3 endPosition = cursor.GetCursorPosition() + Vector3.up * groundOffset;
+            RaycastHit hit;
+            
+            // Display
+            // lineRenderer.SetPosition(0, startPosition);
+            // lineRenderer.SetPosition(1, endPosition);
+
             StartTimerAndDisableLineRendererAfter();
+
+            hitboxRotation.transform.forward = endPosition - startPosition; // Sets the hitbox rotation to face the cursor
+            hitbox.SetActive(true);
         }
 
         private void EnableLineRenderer()
