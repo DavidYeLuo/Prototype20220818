@@ -809,6 +809,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11316550, guid: a9c090dade86b29bf88483bca5281aae, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 1298879478087637590, guid: a9c090dade86b29bf88483bca5281aae, type: 3}
+      propertyPath: maxHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 447b6725594bb9967a51dc4bbc46f226, type: 2}
+    - target: {fileID: 1298879478087637590, guid: a9c090dade86b29bf88483bca5281aae, type: 3}
+      propertyPath: currentHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: e4ea1c3f0298f7147834b4436f39dc36, type: 2}
     - target: {fileID: 2854233109053476522, guid: a9c090dade86b29bf88483bca5281aae, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -857,6 +869,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7440424064124724900, guid: a9c090dade86b29bf88483bca5281aae, type: 3}
+      propertyPath: healthValueReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e4ea1c3f0298f7147834b4436f39dc36, type: 2}
+    - target: {fileID: 7440424064124724900, guid: a9c090dade86b29bf88483bca5281aae, type: 3}
+      propertyPath: maxHealthValueReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 447b6725594bb9967a51dc4bbc46f226, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9c090dade86b29bf88483bca5281aae, type: 3}
 --- !u!1001 &8537146811282427198
