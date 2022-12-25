@@ -167,6 +167,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4984033713781933809}
     - target: {fileID: 1645206811818648377, guid: 285ef8d7913ced1d38b1204cd1c886a1, type: 3}
+      propertyPath: abilityDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645206811818648377, guid: 285ef8d7913ced1d38b1204cd1c886a1, type: 3}
       propertyPath: cursorInterface
       value: 
       objectReference: {fileID: 4984033713781933809}
