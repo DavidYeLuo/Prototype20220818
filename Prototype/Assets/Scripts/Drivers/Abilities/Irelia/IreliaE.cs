@@ -75,14 +75,13 @@ namespace Player.Abilities
                 // Place Pillar
                 startE = cursorPosition + offset;
                 firstPillar.transform.position = startE;
-                // firstPillar.transform.position = cursorPosition + offset;
                 firstPillar.SetActive(true);
             }
             else if (eCount == 1)
             {
                 // Place Pillar
                 endE = cursorPosition + offset;
-                secondPillar.transform.position = cursorPosition;
+                secondPillar.transform.position = endE;
                 secondPillar.SetActive(true);
                 
                 EnablePillarFunctionality();
