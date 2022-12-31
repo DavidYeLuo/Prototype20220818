@@ -9,6 +9,10 @@ namespace Util
     /// Subscribers should subscribe to timeUpEvent.
     /// To start the timer call SetTimer()
     /// </summary>
+    /// 
+    /// <remarks>
+    /// Requires a Monobehavior class to start the coroutine SetTimer()
+    /// </remarks>
     public class Timer
     {
         public delegate void timeUp();
@@ -19,7 +23,6 @@ namespace Util
         /// Note: This is a coroutine function so use StartCoroutine() to use.
         /// </summary>
         /// <param name="seconds"> time in seconds </param>
-        /// <returns>Type: IEnumerator</returns>
         public IEnumerator SetTimer(float seconds)
         {
             yield return new WaitForSeconds(seconds);
