@@ -4,9 +4,15 @@ using UnityEngine.Events;
 
 namespace GameSystem
 {
+    /// <summary>
+    /// Unity Component that maps a specific mouse keys to a script function.
+    /// </summary>
     public class MouseListener : MonoBehaviour
     {
+        [Header("Key Options")]
         [SerializeField] private MouseClick mouseOptions;
+        
+        [Header("Key Events")]
         [SerializeField] private UnityEvent keyDown;
         [SerializeField] private UnityEvent keyUp;
         [SerializeField] private UnityEvent keyHold;
