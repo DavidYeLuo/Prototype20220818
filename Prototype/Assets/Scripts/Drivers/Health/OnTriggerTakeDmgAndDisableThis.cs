@@ -5,13 +5,22 @@ using UnityEngine.Serialization;
 
 namespace Drivers.Health
 {
+    /// <summary>
+    /// When objects touch, this object will damage it.
+    /// Then immediately, this object will be disabled
+    /// </summary>
+    /// <remarks>
+    /// Attach on Unity Components that are trigger
+    /// </remarks>
+    /// TODO: We should rename it to deal damage
+    /// Since this object is inflicting damage to other object
     public class OnTriggerTakeDmgAndDisableThis : MonoBehaviour
     {
         [SerializeField] private int damage;
+        [Tooltip("Contains list of object that will ignore.")]
         [SerializeField] private List<Collider> ignoreCollider;
         private Dictionary<Collider, bool> map;
 
-        [FormerlySerializedAs("hasCollided")]
         [Header("Debug")] 
         [SerializeField] private bool isInIgnoreList;
         private void Start()
@@ -23,6 +32,11 @@ namespace Drivers.Health
             }
         }
 
+        /// <summary>
+        /// Damage the other object when touch happen
+        /// and then disable this game object.
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
             map.TryGetValue(other, out isInIgnoreList);
