@@ -8,6 +8,20 @@ using Util;
 
 namespace Player.Abilities
 {
+    /// <summary>
+    /// Unity Component that is an ability.
+    /// Throws a triangle shaped attack in the direction of the cursor. <br/>
+    /// The pointy part faces toward the cursor. <br/>
+    /// </summary>
+    /// <TODO>
+    /// The purpose of this ability is either to soften enemies so that
+    /// the enemies are low enough for the Q ability to kill for reset. <br/>
+    /// The second purpose which isn't implemented yet is damage reduction: <br/>
+    /// Pressing W should start launching the attack for more damage while also
+    /// reduce damage from incoming attacks. <br/>
+    /// Then releasing the W will launch the triangle attack. Depending on how long
+    /// the player charged for.
+    /// </TODO>
     public class IreliaW : Ability
     {
         [Header("Config")] 
@@ -55,18 +69,27 @@ namespace Player.Abilities
             abilityHitboxTimer.timeUpEvent -= DisableLineRenderer;
         }
 
+        /// <summary>
+        /// Creates a triangle where the player is in the middle of the base. <br/>
+        /// The center of the triangle faces the cursor. <br/>
+        /// There are two stages: <br/>
+        /// First stage happens when the player press and hold W.
+        /// During this stage, Irelia take reduced damage and increase W damage. <br/>
+        /// Then the second stage is when the player release the key
+        /// which launches the triangle attack.
+        /// </summary>
+        /// <remarks>
+        /// The current implementation is enable the hitbox of the triangle.
+        /// TODO: Add first stage
+        /// </remarks>
         public override void PerformAbility()
         {
             EnableLineRenderer();
             Vector3 startPosition = startHitbox.transform.position;
-            // Note: endPosition isn't where the user click, it is offset by groundOffset
             Vector3 endPosition = cursor.GetCursorPosition() + Vector3.up * groundOffset;
             RaycastHit hit;
-            
-            // Display
-            // lineRenderer.SetPosition(0, startPosition);
-            // lineRenderer.SetPosition(1, endPosition);
 
+            // Might not be needed since it is covered by the hitbox
             StartTimerAndDisableLineRendererAfter();
 
             hitboxRotation.transform.forward = endPosition - startPosition; // Sets the hitbox rotation to face the cursor
