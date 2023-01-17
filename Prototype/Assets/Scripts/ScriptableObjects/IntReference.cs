@@ -7,36 +7,39 @@ using UnityEngine;
 /// Integer Reference which allows users to store data like a "file".<br/>
 /// Optional: Notify to subscribers when value changes
 /// </summary>
-[CreateAssetMenu(menuName = "DataReference/IntReference", fileName = "IntReference")]
-[System.Serializable]
-public class IntReference: ScriptableObject
+namespace ScriptableObjects
 {
-    [Header("Debug")]
-    [Tooltip("Changing value in the inspector doesn't do anything.")]
-    [SerializeField] private int value;
-
-    public delegate void notify();
-
-    public event notify subscribers;
-
-    /// <summary>Get the value.</summary>
-    /// <returns>value of the integer.</returns>
-    public int Get()
+    [CreateAssetMenu(menuName = "DataReference/IntReference", fileName = "IntReference")]
+    [System.Serializable]
+    public class IntReference: ScriptableObject
     {
-        return value;
-    }
+        [Header("Debug")]
+        [Tooltip("Changing value in the inspector doesn't do anything.")]
+        [SerializeField] private int value;
 
-    /// <summary>Sets the value and notify subscribers.</summary>
-    /// <param name="value">value of the integer.</param>
-    public void Set(int value)
-    {
-        this.value = value;
-        NotifySubscribers();
-    }
+        public delegate void notify();
 
-    private void NotifySubscribers()
-    {
-        if (subscribers == null) return;
-        subscribers.Invoke();
+        public event notify subscribers;
+
+        /// <summary>Get the value.</summary>
+        /// <returns>value of the integer.</returns>
+        public int Get()
+        {
+            return value;
+        }
+
+        /// <summary>Sets the value and notify subscribers.</summary>
+        /// <param name="value">value of the integer.</param>
+        public void Set(int value)
+        {
+            this.value = value;
+            NotifySubscribers();
+        }
+
+        private void NotifySubscribers()
+        {
+            if (subscribers == null) return;
+            subscribers.Invoke();
+        }
     }
 }
