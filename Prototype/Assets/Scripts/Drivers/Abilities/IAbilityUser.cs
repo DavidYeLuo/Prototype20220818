@@ -1,4 +1,4 @@
-namespace Entity
+namespace Drivers.Abilities.Irelia
 {
     /// <summary>
     /// Interface for Objects/Entities with ability(s)

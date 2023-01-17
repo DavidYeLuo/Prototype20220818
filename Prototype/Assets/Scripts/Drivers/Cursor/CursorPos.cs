@@ -1,7 +1,7 @@
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace Entity
+namespace Drivers.Cursor
 {
     /// <summary>
     /// Unity Component that handles with cursor

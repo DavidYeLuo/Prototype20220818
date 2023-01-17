@@ -2,7 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Player
+namespace Drivers.Movement
 {
     /// <summary>
     /// Unity Component that moves the object

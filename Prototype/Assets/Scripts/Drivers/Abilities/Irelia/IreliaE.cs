@@ -1,4 +1,5 @@
 using System;
+using Drivers.Cursor;
 using Drivers.Health;
 using Entity;
 using GameSystem;
@@ -6,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Util;
 
-namespace Player.Abilities
+namespace Drivers.Abilities.Irelia
 {
     /// <summary>
     /// Unity Component that is an ability implementation. <br/>

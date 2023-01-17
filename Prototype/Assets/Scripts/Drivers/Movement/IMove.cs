@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player
+namespace Drivers.Movement
 {
     /// <summary>
     /// Interface for objects/entities that can move

@@ -1,10 +1,13 @@
 using System;
+using Drivers.Abilities.Irelia;
+using Drivers.Cursor;
+using Drivers.Movement;
 using Entity;
 using GameSystem;
 using UnityEditor;
 using UnityEngine;
 
-namespace Player
+namespace Entity.Player
 {
     /// <summary>
     /// Unity Component that handles with users inputs. <br/>

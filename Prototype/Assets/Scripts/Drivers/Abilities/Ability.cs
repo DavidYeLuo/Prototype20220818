@@ -1,7 +1,7 @@
 using Entity;
 using UnityEngine;
 
-namespace Player.Abilities
+namespace Drivers.Abilities.Irelia
 {
     /// <summary>
     /// Template for an ability. 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Entity
+namespace Drivers.Cursor
 {
     /// <summary>
     /// Interface for objects/entities that have a cursor. <br/>
